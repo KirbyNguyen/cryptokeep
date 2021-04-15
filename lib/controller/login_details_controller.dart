@@ -16,8 +16,11 @@ class LoginDetailsController extends GetxController {
   void toggleFavorite(Login login) async {
     final _controller = Get.find<HomeController>();
 
-    login.favorite = login.favorite != 0 ? 1 : 0;
+    login.favorite = login.favorite != 0 ? 0 : 1;
     _controller.updateItem(login.id, login);
+    
+    String msg = login.favorite != 0 ? FAVORITE_ADDED : FAVORITE_REMOVED;
+    AppSnackBar.show(Get.context, text: msg);
   }
 
   void onCopyClick(String data, int type) async {

@@ -20,6 +20,8 @@ const PASSWORD_COPIED = "Password copied to clipboard";
 const USERNAME_COPIED = "Username copied to clipboard";
 const FINGERPRINT_NOT_SUPPORTED =
     "Fingerprint Authentication is not supported on this device";
+const FAVORITE_ADDED = "Password added to favorites";
+const FAVORITE_REMOVED = "Password removed from favorites";
 
 /// Configs constants
 const CONFIGS = "CONFIGS";
