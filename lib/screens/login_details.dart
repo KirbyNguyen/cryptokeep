@@ -194,10 +194,15 @@ class TopSecondPanel extends GetView<LoginDetailsController> {
           ),
           BuildIconWithText(
             "Favorite",
-            Icon(
-              Icons.favorite,
-              color: Theme.of(context).accentColor,
-              size: 30,
+            GestureDetector(
+              onTap: () async {
+                controller.toggleFavorite(login);
+              },
+              child: Icon(
+                login.favorite != 0 ? Icons.favorite : Icons.favorite_border,
+                color: Theme.of(context).accentColor,
+                size: 30,
+              ),
             ),
           ),
         ],

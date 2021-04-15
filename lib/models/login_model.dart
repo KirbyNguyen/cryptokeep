@@ -3,12 +3,14 @@ import 'package:uuid/uuid.dart';
 
 class Login {
   String id, username, password, category, title, createdAt, updatedAt;
+  int favorite;
 
   Login(
       {id,
       name,
       username,
       password,
+      favorite = 1,
       category = "Login",
       createdAt,
       updatedAt}) {
@@ -16,6 +18,7 @@ class Login {
     this.title = name;
     this.username = username;
     this.password = password;
+    this.favorite = favorite;
     this.category = category;
     this.createdAt = createdAt ?? DateTime.now().toIso8601String();
     this.updatedAt = updatedAt ?? DateTime.now().toIso8601String();
@@ -27,6 +30,7 @@ class Login {
       "title": this.title,
       "username": this.username,
       "password": this.password,
+      "favorite": this.favorite,
       "category": this.category,
       "createdAt": this.createdAt,
       "updatedAt": this.updatedAt
@@ -41,6 +45,7 @@ class Login {
     password = decryptPassword
         ? EncryptionService().decrypt(map["password"])
         : map["password"];
+    favorite = map["favorite"];
     category = map["category"];
     createdAt = map["createdAt"];
     updatedAt = map["updatedAt"];
@@ -52,6 +57,7 @@ class Login {
       name: map["title"],
       username: map["username"],
       password: map["password"],
+      // favorite: map["favorite"],
       category: map["category"],
     );
   }

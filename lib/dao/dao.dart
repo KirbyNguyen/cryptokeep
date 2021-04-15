@@ -17,6 +17,7 @@ class DBHelper {
   static const _title = "title";
   static const _username = "username";
   static const _password = "password";
+  static const _favorite = "favorite";
   static const _category = "category";
   static const _createdAt = "createdAt";
   static const _updatedAt = "updatedAt";
@@ -47,6 +48,7 @@ class DBHelper {
         $_title TEXT NOT NULL,
         $_username TEXT NOT NULL,
         $_password TEXT NOT NULL,
+        $_favorite NUM NOT NULL,
         $_category TEXT,
         $_createdAt TEXT,
         $_updatedAt TEXT
